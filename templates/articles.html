@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Home Page
+{% endblock title %}
+
+{% block body %}
+<!-- <h1>Shri Ganeshay Namah</h1> -->
+    <ul class="list-group">
+        {% for article in articles %}
+          <li class="list-group-item"><a href="/article/{{article.id}}">{{article.title}}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock body %}

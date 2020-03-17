@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Home Page
+{% endblock title %}
+
+{% block body %}
+<!-- <h1>Shri Ganeshay Namah</h1> -->
+    <div class="text-center" style="margin-right:30px">
+        <h2>{{article.title}}</h2>
+        <h5>Written By: {{article.author}}</h5>
+        <hr>
+        <div class="container" style="word-wrap: break-word;">
+          <span><b>{{article.body| safe}}</b></span>
+        </div>
+        
+    </div>
+{% endblock body %}

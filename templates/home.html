@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Home Page
+{% endblock title %}
+
+{% block body %}
+<!-- <h1>Shri Ganeshay Namah</h1> -->
+    <div class="jumbotron text-center" >
+        <h1>Welcome To Blogging Web App</h1>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate illum recusandae deserunt doloremque optio vero, at adipisci suscipit, consectetur, impedit omnis? Impedit, exercitationem adipisci earum dolore qui soluta voluptatibus aperiam?</p>
+        {% if session.logged_in ==NULL %}
+          <a href="/register" class="btn btn-primary btn-lg">Register</a>
+          <a href="/login" class="btn btn-success btn-lg">Login</a>
+        {% endif %}
+    </div>
+{% endblock body %}

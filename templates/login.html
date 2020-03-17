@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Login Page
+{% endblock title %}
+
+{% block body %}
+    <form method="POST" action="" >
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password">
+            <br>
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </div>
+    </form>
+{% endblock body %}

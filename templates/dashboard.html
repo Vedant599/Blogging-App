@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Dashboard
+{% endblock title %}
+
+{% block body %}
+  <h1>Dashboard <small>Welcome {{session.username}}</small></h1>
+  <br>
+  <a class="btn btn-success" href="/add_article">Add Article</a>
+  <hr>
+  {% if data %}
+    <table class="table table-striped" >
+      <tr>
+        <th style="text-align: center;">ID</th>
+        <th style="text-align: center;">Title</th>
+        <th style="text-align: center;">Author</th>
+        <th style="text-align: center;">Date Created</th>
+        <th style="text-align: center;"></th>
+        <th style="text-align: center;"></th>
+      </tr>
+    {% for article in data %}
+    <tr>
+      <td style="text-align: center;" >{{article.id}}</td>
+      <td style="text-align: center;">{{article.title}}</td>
+      <td style="text-align: center;">{{article.author}}</td> 
+      <td style="text-align: center;">{{article.create_date}}</td>
+      <td style="text-align: center;"><a href="/edit_article/{{article.id}}" class="btn btn-primary">Edit</a></td>
+      <td style="text-align: center;">
+        <form action="{{url_for('delete_article',id=article.id)}}" method="POST">
+          <input type="hidden" name="_method" value="Delete">
+          <input type="submit" class="btn btn-danger" value="Delete">
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endif %}
+{% endblock body %}
